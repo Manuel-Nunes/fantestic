@@ -1,23 +1,27 @@
+/** @typedef {import('../types/types')} */
+
 import styled from "styled-components";
+import ToDoItemDisplay from "./ToDoItemDisplay";
+
+import {
+  indexOfToDoItem,
+  removeItemFromDoToList,
+  toggleCanceled,
+  toggleDone
+} from "../utils"
 
 const ListWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #858585;
+  border-radius: 20px;
+  margin: 1rem 1rem;
+  height: 75%;
+  overflow-y: auto;
 `;
 
-const ListItem = styled.div`
-  display: flex;
-  background-color: green;
-`
-
 /**
- * @typedef {object} ToDoDisplayProps
- * @property {string[]} toDoList
- * @property {Function} setToDoItems
- */
-
-/**
- * @param {ToDoDisplayProps} props 
+ * @param {ToDoDisplayProps} props
  * @returns { JSX.Element }
  */
 export function ToDoDisplay(
@@ -27,19 +31,42 @@ export function ToDoDisplay(
   }
 ){
 
+  /**
+   * Removes provided Item from todo state
+   * @param {ToDoData} Item
+   */
+  const removeItem = (Item)=>{
+    setToDoItems(removeItemFromDoToList(Item,toDoList) )
+  }
+
+  /**
+   * Toggles done state on item
+   * @param {ToDoData} Item
+   */
+  const toggleDoneClick = (Item )=>{
+    setToDoItems(toggleDone(Item,toDoList) )
+  }
+
+  /**
+   * Toggles done state on item
+   * @param {ToDoData} Item
+   */
+  const toggleCancelClick = (Item )=>{
+    setToDoItems(toggleCanceled(Item,toDoList) )
+  }
 
   return (
     <ListWrapper>
       {
         toDoList.map( (value, index)=> {
           return (
-            <ListItem key={`listItem-${index}`} onClick={ ()=> {
-              setToDoItems()
-            }}>
-              {
-                value
-              }
-            </ListItem>
+            <ToDoItemDisplay
+              Data={value}
+              key={`Item-${index}`}
+              RemoveItemClick={removeItem}
+              CanceledItemClick={toggleCancelClick}
+              DoneItemClick={toggleDoneClick}
+            />
           )
         })
       }
