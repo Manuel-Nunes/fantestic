@@ -54,7 +54,7 @@ export function Header(
 
       <ItemInput onChange={(e)=>{
         setState(`${textState}${e.target.value}`)
-      }}></ItemInput>
+      }} value={textState}></ItemInput>
 
       <AddButton onClick={()=>{
         addToDoItem(textState);

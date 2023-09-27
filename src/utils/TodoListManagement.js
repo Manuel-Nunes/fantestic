@@ -67,9 +67,30 @@ export function toggleCanceled(Item, List){
   return clone;
 }
 
+/**
+ * Adds an new Object
+ * @param {string} text 
+ * @param {ToDoData[]} List
+ */
+export function appendToDo(text, List){
+  const clone = [
+    ...List
+  ]
+  
+  clone.push({
+    Canceled: false,
+    Description: text,
+    Done: false,
+    ID: clone[clone.length-1].ID + 1
+  })
+
+  return clone;
+}
+
 export default {
   indexOfToDoItem,
   removeItemFromDoToList,
   toggleCanceled,
-  toggleDone
+  toggleDone,
+  appendToDo
 }
