@@ -53,7 +53,7 @@ export function Header(
     <HeaderHolder>
 
       <ItemInput onChange={(e)=>{
-        setState(`${textState}${e.target.value}`)
+        setState(e.target.value)
       }} value={textState}></ItemInput>
 
       <AddButton onClick={()=>{
