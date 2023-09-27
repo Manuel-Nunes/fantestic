@@ -16,6 +16,7 @@ const ToItemBody = styled.div`
   box-sizing:border-box;
   padding: 0 2rem;
   justify-items: center;
+  box-sizing:border-box;
 `
 
 const itemButtons = styled.div`
@@ -52,14 +53,15 @@ const ToItemCanceledButton = styled(itemButtons)`
   grid-area: cancelButton;
 `
 
-const ToItemText = styled.p`
-  font-size: 1.5rem;
+const ToItemText = styled.div`
+  display: block;
+  font-size: 1.25em;
   grid-area: displayText;
   text-align: center;
-  max-width: 80%;
-  overflow-x: auto;
+  max-width: 13rem;
+  /* width: 20%; */
+  overflow-x: hidden;
   white-space: nowrap;
-  scrollbar-width: thin;
 `
 
 /**

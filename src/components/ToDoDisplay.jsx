@@ -4,7 +4,6 @@ import styled from "styled-components";
 import ToDoItemDisplay from "./ToDoItemDisplay";
 
 import {
-  indexOfToDoItem,
   removeItemFromDoToList,
   toggleCanceled,
   toggleDone
@@ -16,8 +15,12 @@ const ListWrapper = styled.div`
   background-color: #858585;
   border-radius: 20px;
   margin: 1rem 1rem;
-  height: 75%;
+  height: 100%;
   overflow-y: auto;
+  box-sizing: border-box;
+  &:nth-child(odd) {
+    background-color: grey;
+  }
 `;
 
 /**

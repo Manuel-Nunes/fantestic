@@ -19,3 +19,8 @@
  * @property { Function } CanceledItemClick
  * @property { Function } DoneItemClick
  */
+
+/**
+ * @typedef {object} HeaderProps
+ * @property {Function} addToDoItem
+ */

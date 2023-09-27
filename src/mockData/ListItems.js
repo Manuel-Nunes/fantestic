@@ -38,6 +38,24 @@ export const ListItems = [
     Description : "Turn that frown upside down",
     ID          : 6
   },
+  {
+    Canceled    : false,
+    Done        : true,
+    Description : "Watch movie",
+    ID          : 7
+  },
+  {
+    Canceled    : false,
+    Done        : true,
+    Description : "Learn drums🥁🥁🥁🥁🥁🥁🥁",
+    ID          : 8
+  },
+    {
+    Canceled    : false,
+    Done        : true,
+    Description : "Make good dang food!!!!🥞🥞🥞🥝🥝🥘🥘🥙🥙",
+    ID          : 9
+  },
 ];
 
 export default {
