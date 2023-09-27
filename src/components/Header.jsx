@@ -20,6 +20,7 @@ const ItemInput = styled.input`
   border-radius: 20px;
   background-color:#454545;
   padding: 0.25rem 1rem;
+  width: 10rem;
 `
 
 const AddButton = styled.div`
@@ -38,6 +39,10 @@ const AddButton = styled.div`
   }
 `
 
+const InputLable = styled.label`
+  padding-right: 1rem;
+`;
+
 /**
  *
  * @param {HeaderProps} props
@@ -52,9 +57,12 @@ export function Header(
   return (
     <HeaderHolder>
 
-      <ItemInput onChange={(e)=>{
-        setState(e.target.value)
-      }} value={textState}></ItemInput>
+      <div>
+        <InputLable>Task:</InputLable>
+        <ItemInput onChange={(e)=>{
+          setState(e.target.value)
+        }} value={textState}></ItemInput>
+      </div>
 
       <AddButton onClick={()=>{
         addToDoItem(textState);
