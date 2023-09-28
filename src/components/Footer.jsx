@@ -10,7 +10,7 @@ const FooterButton = styled.div`
   width: 100%;
   border-radius: 10px;
 
-  ${({$isEnabled})=> $isEnabled? 'background-color: #00806d;': 'background-color: grey;'}
+  ${({$isEnabled})=> $isEnabled? 'cursor: pointer; background-color: #00806d;': 'cursor: not-allowed; background-color: grey;'}
 
   &:hover {
     ${({$isEnabled})=> $isEnabled? 'filter: brightness(1.5);': ''}
