@@ -23,7 +23,6 @@ describe('<AppMain />', () => {
 
   it('cancels a task', () => {
     
-    // cy.contains(`${guid}`).get('#cancel-btn').click();
   });
 
   it('removes a task', () => {
