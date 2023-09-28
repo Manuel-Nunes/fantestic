@@ -29,4 +29,5 @@
  * @typedef {object} FooterProps
  * @property {Function} saveList
  * @property {Function} loadList
+ * @property {boolean} isLoadAvailable
  */

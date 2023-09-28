@@ -6,12 +6,14 @@ const FooterButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #00806d;
   height: 100%;
   width: 100%;
   border-radius: 10px;
+
+  ${({$isEnabled})=> $isEnabled? 'background-color: #00806d;': 'background-color: grey;'}
+
   &:hover {
-    filter: brightness(1.5);
+    ${({$isEnabled})=> $isEnabled? 'filter: brightness(1.5);': ''}
   }
 `;
 
@@ -37,13 +39,14 @@ const FooterHolder = styled.div`
 export function Footer(
   {
     loadList,
-    saveList
+    saveList,
+    isLoadAvailable
   }
 ){
   return (
     <FooterHolder>
-      <FooterButton onClick={ saveList } >Save</FooterButton>
-      <FooterButton onClick={ loadList } >Load</FooterButton>
+      <FooterButton onClick={ saveList } $isEnabled={ true } >Save</FooterButton>
+      <FooterButton onClick={ loadList } $isEnabled={ isLoadAvailable }>Load</FooterButton>
     </FooterHolder>
   );
 }
