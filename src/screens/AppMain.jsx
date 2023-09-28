@@ -7,15 +7,15 @@ import {
 import {
   Header,
   ToDoDisplay
-} from "../components"
+} from "../components";
 
 import {
   ListItems
-} from "../mockData/ListItems"
+} from "../mockData/ListItems";
 
 import {
   appendToDo
-} from "../utils"
+} from "../utils";
 
 export function AppMain() {
 
@@ -23,11 +23,11 @@ export function AppMain() {
 
   /**
    * Adds new todo item to state
-   * @param {string} description 
+   * @param {string} description
    */
   const addToDo = (description)=>{
-    setDoItems(appendToDo(description,ToDoItems)) 
-  }
+    setDoItems(appendToDo(description,ToDoItems));
+  };
 
   return (
     <>

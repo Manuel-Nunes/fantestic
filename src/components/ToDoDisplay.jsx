@@ -7,7 +7,7 @@ import {
   removeItemFromDoToList,
   toggleCanceled,
   toggleDone
-} from "../utils"
+} from "../utils";
 
 const ListWrapper = styled.div`
   display: flex;
@@ -39,24 +39,24 @@ export function ToDoDisplay(
    * @param {ToDoData} Item
    */
   const removeItem = (Item)=>{
-    setToDoItems(removeItemFromDoToList(Item,toDoList) )
-  }
+    setToDoItems(removeItemFromDoToList(Item,toDoList) );
+  };
 
   /**
    * Toggles done state on item
    * @param {ToDoData} Item
    */
   const toggleDoneClick = (Item )=>{
-    setToDoItems(toggleDone(Item,toDoList) )
-  }
+    setToDoItems(toggleDone(Item,toDoList) );
+  };
 
   /**
    * Toggles done state on item
    * @param {ToDoData} Item
    */
   const toggleCancelClick = (Item )=>{
-    setToDoItems(toggleCanceled(Item,toDoList) )
-  }
+    setToDoItems(toggleCanceled(Item,toDoList) );
+  };
 
   return (
     <ListWrapper>
@@ -70,7 +70,7 @@ export function ToDoDisplay(
               CanceledItemClick={toggleCancelClick}
               DoneItemClick={toggleDoneClick}
             />
-          )
+          );
         })
       }
     </ListWrapper>
