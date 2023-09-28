@@ -2,20 +2,44 @@
 
 import {
   useState
-} from "react";
+} from 'react';
 
 import {
   Header,
-  ToDoDisplay
-} from "../components"
+  ToDoDisplay,
+  Footer
+} from '../components';
 
 import {
   ListItems
-} from "../mockData/ListItems"
+} from '../mockData/ListItems';
 
 import {
   appendToDo
-} from "../utils"
+} from '../utils';
+
+const itemKey = 'ToDoStorage';
+
+/**
+ * Saves ToDoList to localStorage
+ * @param {ToDoData[]} ToDoList
+ */
+function saveToDoItems( ToDoList ){
+  localStorage.setItem(itemKey,JSON.stringify(ToDoList));
+}
+
+/**
+ * Loads ToDoItems if available from localstorage
+ * @param {Function} setToDoValues
+ */
+function loadToDoItems(setToDoValues){
+  try {
+    setToDoValues(JSON.parse(localStorage.getItem(itemKey)));
+  } catch (error) {
+    console.warn(error);
+  }
+
+}
 
 export function AppMain() {
 
@@ -23,16 +47,21 @@ export function AppMain() {
 
   /**
    * Adds new todo item to state
-   * @param {string} description 
+   * @param {string} description
+   * @param {string} description
    */
   const addToDo = (description)=>{
-    setDoItems(appendToDo(description,ToDoItems)) 
-  }
+    setDoItems(appendToDo(description,ToDoItems));
+  };
 
   return (
     <>
       <Header addToDoItem={addToDo}/>
       <ToDoDisplay toDoList={ToDoItems} setToDoItems={setDoItems} />
+      <Footer
+        loadList={ () => { loadToDoItems( setDoItems ); }}
+        saveList={ () => { saveToDoItems( ToDoItems ); }}
+      />
     </>
   );
 }
