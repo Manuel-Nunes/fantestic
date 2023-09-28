@@ -26,6 +26,7 @@ export function removeItemFromDoToList(Item, List){
 
   const index = indexOfToDoItem(Item,clone);
   clone.splice(index,1)
+
   return clone;
 }
 
@@ -69,19 +70,19 @@ export function toggleCanceled(Item, List){
 
 /**
  * Adds an new Object
- * @param {string} text 
+ * @param {string} text
  * @param {ToDoData[]} List
  */
 export function appendToDo(text, List){
   const clone = [
     ...List
   ]
-  
+
   clone.push({
     Canceled: false,
     Description: text,
     Done: false,
-    ID: clone[clone.length-1].ID + 1
+    ID: clone.length> 0? clone[clone.length-1].ID + 1: 1
   })
 
   return clone;
