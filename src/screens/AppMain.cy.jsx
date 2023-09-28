@@ -1,16 +1,17 @@
 import React from 'react'
 import AppMain from './AppMain'
+import { ToDoItemDisplay } from '../components';
 
 describe('<AppMain />', () => {
 
   const guid = getGuid();
+  const checkedClassName = 'jjQaGy';
+  const cancelledClassName = 'jjQaGy';
 
   beforeEach('renders', () => {
     cy.mount(<AppMain />)
     cy.get('#task-text').click().type(`${guid}`);
     cy.get('#add-task-btn').click();
-
-    console.log("here");
   });
 
   it('adds a task', () => {
@@ -18,16 +19,17 @@ describe('<AppMain />', () => {
   });
 
   it('completes a task', () => {
-    cy.contains('div', `${guid}`).parent().children('#done-btn').click()
+    cy.contains('div', `${guid}`).parent().children('#done-btn').click();
+    cy.contains('div', `${guid}`).parent().children('#done-btn').should('have.class', checkedClassName);
   });
 
-  it('cancels a task', () => {
+  // it('cancels a task', () => {
     
-  });
+  // });
 
-  it('removes a task', () => {
+  // it('removes a task', () => {
     
-  });
+  // });
 })
 
 function getGuid() {
