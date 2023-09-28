@@ -8,15 +8,15 @@ import {
   Header,
   ToDoDisplay,
   Footer
-} from "../components"
+} from "../components";
 
 import {
   ListItems
-} from "../mockData/ListItems"
+} from "../mockData/ListItems";
 
 import {
   appendToDo
-} from "../utils"
+} from "../utils";
 
 const itemKey = 'ToDoStorage';
 
@@ -34,9 +34,9 @@ function saveToDoItems( ToDoList ){
  */
 function loadToDoItems(setToDoValues){
   try {
-    setToDoValues(JSON.parse(localStorage.getItem(itemKey)))
+    setToDoValues(JSON.parse(localStorage.getItem(itemKey)));
   } catch (error) {
-    console.warn(error)
+    console.warn(error);
   }
 
 }
@@ -48,18 +48,19 @@ export function AppMain() {
   /**
    * Adds new todo item to state
    * @param {string} description
+   * @param {string} description
    */
   const addToDo = (description)=>{
-    setDoItems(appendToDo(description,ToDoItems))
-  }
+    setDoItems(appendToDo(description,ToDoItems));
+  };
 
   return (
     <>
       <Header addToDoItem={addToDo}/>
       <ToDoDisplay toDoList={ToDoItems} setToDoItems={setDoItems} />
       <Footer
-        loadList={ () => { loadToDoItems( setDoItems ) }}
-        saveList={ () => { saveToDoItems( ToDoItems ) }}
+        loadList={ () => { loadToDoItems( setDoItems ); }}
+        saveList={ () => { saveToDoItems( ToDoItems ); }}
       />
     </>
   );

@@ -25,7 +25,7 @@ const ToItemBody = styled.div`
   @media screen and (width < 280px) {
     padding: 0 0rem;
   }
-`
+`;
 
 const itemButtons = styled.div`
   width:100%;
@@ -36,30 +36,30 @@ const itemButtons = styled.div`
   background-size: 60% 60%;
   cursor: pointer;
 
-  ${ ({ $isActive })=> { return ($isActive) ? "filter: brightness(1.5);" : ""}}
+  ${ ({ $isActive })=> { return ($isActive) ? "filter: brightness(1.5);" : "";}}
 
   &:hover {
     filter: brightness(1.5);
   }
-`
+`;
 
 const ToItemRemoveButton = styled(itemButtons)`
   background-color: #626262;
   background-image: url('src/assets/delete.svg');
   grid-area: deleteButton;
-`
+`;
 
 const ToItemDoneButton = styled(itemButtons)`
   background-color: #2c8c1d;
   background-image: url('src/assets/check.svg');
   grid-area: doneButton;
-`
+`;
 
 const ToItemCanceledButton = styled(itemButtons)`
   background-color: #a80606;
   background-image: url('src/assets/cancel.svg');
   grid-area: cancelButton;
-`
+`;
 
 const ToItemText = styled.div`
   display: block;
@@ -84,7 +84,7 @@ const ToItemText = styled.div`
     font-size: 1rem;
     max-height: 1.25rem;
   }
-`
+`;
 
 /**
  * Render function for ToDoItemDisplay
@@ -96,10 +96,11 @@ export function ToDoItemDisplay({
   DoneItemClick,
   RemoveItemClick
 }){
+
   return (
     <ToItemBody>
       <ToItemRemoveButton
-        onClick={()=>{ RemoveItemClick(Data)}}
+        onClick={()=>{ RemoveItemClick(Data);}}
         />
 
       <ToItemText>
@@ -111,19 +112,19 @@ export function ToDoItemDisplay({
       <ToItemDoneButton
         $isActive={Data.Done}
         onClick={()=>{
-          DoneItemClick(Data)
+          DoneItemClick(Data);
         }}
       />
 
       <ToItemCanceledButton
         $isActive={Data.Canceled}
         onClick={()=>{
-          CanceledItemClick(Data)
+          CanceledItemClick(Data);
         }}
       />
 
     </ToItemBody>
-  )
+  );
 }
 
 export default ToDoItemDisplay;

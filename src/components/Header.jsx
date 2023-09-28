@@ -17,7 +17,7 @@ const HeaderHolder = styled.div`
   @media screen and (width < 400px) {
     gap: 1rem;
   }
-`
+`;
 
 const ItemInput = styled.input`
   font-size: 1.25rem;
@@ -36,7 +36,7 @@ const ItemInput = styled.input`
     font-size: 0.75rem;
     width:6rem;
   }
-`
+`;
 
 const AddButton = styled.div`
   background-color: green;
@@ -56,7 +56,7 @@ const AddButton = styled.div`
   @media screen and (width < 380px) {
     height: 40%
   }
-`
+`;
 
 const InputLable = styled.label`
   padding-right: 1rem;
@@ -83,13 +83,13 @@ export function Header(
       <div>
         <InputLable>Task:</InputLable>
         <ItemInput onChange={(e)=>{
-          setState(e.target.value)
+          setState(e.target.value);
         }} value={textState}></ItemInput>
       </div>
 
       <AddButton onClick={()=>{
         addToDoItem(textState);
-        setState("")
+        setState("");
       }}/>
 
     </HeaderHolder>
