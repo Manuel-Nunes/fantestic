@@ -11,8 +11,12 @@ const HeaderHolder = styled.div`
   height: 6rem;
   background-color: #858585;
   border-radius: 20px;
-  margin: 1rem 1rem;
-  gap: 3rem;
+  margin: 1rem 1rem 0rem 1rem;
+  gap: 1rem;
+
+  @media screen and (width < 400px) {
+    gap: 1rem;
+  }
 `
 
 const ItemInput = styled.input`
@@ -21,6 +25,17 @@ const ItemInput = styled.input`
   background-color:#454545;
   padding: 0.25rem 1rem;
   width: 10rem;
+
+  @media screen and (width < 380px) {
+    font-size: 1rem;
+    width:8rem;
+  }
+
+  @media screen and (width < 290px) {
+    padding: 0.25rem 0.25rem;
+    font-size: 0.75rem;
+    width:6rem;
+  }
 `
 
 const AddButton = styled.div`
@@ -37,10 +52,18 @@ const AddButton = styled.div`
   &:hover {
     filter: brightness(1.5);
   }
+
+  @media screen and (width < 380px) {
+    height: 40%
+  }
 `
 
 const InputLable = styled.label`
   padding-right: 1rem;
+
+  @media screen and (width < 280px) {
+    padding-right: 0.25rem;
+  }
 `;
 
 /**

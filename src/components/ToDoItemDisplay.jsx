@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const ToItemBody = styled.div`
   display: grid;
-
+  grid-gap: 0.25rem;
   grid-template-columns:     1fr         5fr         1fr         1fr;
   grid-template-areas: "deleteButton displayText doneButton cancelButton";
   justify-content: center;
@@ -14,13 +14,21 @@ const ToItemBody = styled.div`
   height: 5rem;
   min-height: 4rem;
   box-sizing:border-box;
-  padding: 0 2rem;
+  padding: 0 1rem;
   justify-items: center;
   box-sizing:border-box;
+
+  @media screen and (width < 380px) {
+    padding: 0 1rem;
+  }
+
+  @media screen and (width < 280px) {
+    padding: 0 0rem;
+  }
 `
 
 const itemButtons = styled.div`
-  width: 80%;
+  width:100%;
   aspect-ratio: 1/1;
   border-radius: 10px;
   background-position: center;
@@ -58,10 +66,24 @@ const ToItemText = styled.div`
   font-size: 1.25em;
   grid-area: displayText;
   text-align: center;
-  max-width: 13rem;
-  /* width: 20%; */
+  max-width: 11rem;
   overflow-x: hidden;
-  white-space: nowrap;
+  overflow-y: hidden;
+  white-space: break-spaces;
+  max-height: 2.6em;
+
+  @media screen and (width < 420px) {
+    max-width: 7rem;
+  }
+
+  @media screen and (width < 520px) {
+    max-width: 10rem;
+  }
+
+  @media screen and (height < 500px) {
+    font-size: 1rem;
+    max-height: 1.25rem;
+  }
 `
 
 /**

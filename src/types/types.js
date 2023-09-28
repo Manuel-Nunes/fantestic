@@ -24,3 +24,9 @@
  * @typedef {object} HeaderProps
  * @property {Function} addToDoItem
  */
+
+/**
+ * @typedef {object} FooterProps
+ * @property {Function} saveList
+ * @property {Function} loadList
+ */
