@@ -38,12 +38,22 @@ function loadToDoItems(setToDoValues){
   } catch (error) {
     console.warn(error);
   }
+}
 
+function checkIfLoadIsAvailable(){
+  try {
+    let obj = JSON.parse(localStorage.getItem(itemKey));
+    return Object.keys(obj).length > 0;
+
+  } catch (error) {
+
+    return false;
+  }
 }
 
 export function AppMain() {
 
-  const [ToDoItems, setDoItems] = useState(ListItems );
+  const [ToDoItems, setDoItems] = useState([] );
 
   /**
    * Adds new todo item to state
@@ -59,6 +69,7 @@ export function AppMain() {
       <Header addToDoItem={addToDo}/>
       <ToDoDisplay toDoList={ToDoItems} setToDoItems={setDoItems} />
       <Footer
+        isLoadAvailable={ checkIfLoadIsAvailable() }
         loadList={ () => { loadToDoItems( setDoItems ); }}
         saveList={ () => { saveToDoItems( ToDoItems ); }}
       />
