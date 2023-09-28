@@ -9,7 +9,11 @@ on:
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
-    
+    inputs:
+      test:
+        description: 'Test Enabled'
+        default: true
+        type: boolean
 jobs:
   build:
 
