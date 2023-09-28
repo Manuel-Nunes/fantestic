@@ -8,7 +8,7 @@
 export function indexOfToDoItem(Item, List){
   if (!Item || !List)
   {
-    console.warn("indexOfToDoItem, was called with undefined parameters");
+    console.warn('indexOfToDoItem, was called with undefined parameters');
     return -1;
   }
 
@@ -28,7 +28,7 @@ export function removeItemFromDoToList(Item, List){
 
   if (!List)
   {
-    console.warn("removeItemFromDoToList was called with no List parameter");
+    console.warn('removeItemFromDoToList was called with no List parameter');
     return [];
   }
 
@@ -38,7 +38,7 @@ export function removeItemFromDoToList(Item, List){
 
   if (!Item)
   {
-    console.warn("removeItemFromDoToList was called with no Item parameter");
+    console.warn('removeItemFromDoToList was called with no Item parameter');
     return clone;
   }
 
@@ -57,7 +57,7 @@ export function removeItemFromDoToList(Item, List){
  */
 export function toggleDone(Item, List){
   if (!List){
-    console.warn("toggleDone was called with no List parameter");
+    console.warn('toggleDone was called with no List parameter');
     return [];
   }
 
@@ -66,7 +66,7 @@ export function toggleDone(Item, List){
   ];
 
   if (!Item){
-    console.warn("toggleDone was called with no Item parameter");
+    console.warn('toggleDone was called with no Item parameter');
     return clone;
   }
 
@@ -89,7 +89,7 @@ export function toggleDone(Item, List){
  */
 export function toggleCanceled(Item, List){
   if (!List){
-    console.warn("toggleCanceled was called with no List parameter");
+    console.warn('toggleCanceled was called with no List parameter');
     return [];
   }
 
@@ -98,7 +98,7 @@ export function toggleCanceled(Item, List){
   ];
 
   if (!Item){
-    console.warn("toggleCanceled was called with no Item parameter");
+    console.warn('toggleCanceled was called with no Item parameter');
     return clone;
   }
 
@@ -122,7 +122,7 @@ export function toggleCanceled(Item, List){
 export function appendToDo(text, List){
   if (!List)
   {
-    console.warn("appendToDo was called with no List parameter");
+    console.warn('appendToDo was called with no List parameter');
     List = [];
   }
   const clone = [
@@ -131,7 +131,7 @@ export function appendToDo(text, List){
 
   if (!text){
 
-    console.warn("appendToDo was called with an undefined text");
+    console.warn('appendToDo was called with an undefined text');
 
     return clone;
   }

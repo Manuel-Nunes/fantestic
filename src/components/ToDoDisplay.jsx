@@ -1,13 +1,13 @@
 /** @typedef {import('../types/types')} */
 
-import styled from "styled-components";
-import ToDoItemDisplay from "./ToDoItemDisplay";
+import styled from 'styled-components';
+import ToDoItemDisplay from './ToDoItemDisplay';
 
 import {
   removeItemFromDoToList,
   toggleCanceled,
   toggleDone
-} from "../utils";
+} from '../utils';
 
 const ListWrapper = styled.div`
   display: flex;

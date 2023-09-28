@@ -1,10 +1,10 @@
 import {
   toggleDone
-} from "../utils";
+} from '../utils';
 
 import {
   ListItems
-} from "../mockData/ListItems";
+} from '../mockData/ListItems';
 
 import {
   describe,
@@ -12,10 +12,10 @@ import {
   it,
   vi,
   afterEach,
-} from "vitest";
+} from 'vitest';
 
-describe("When given toggleDone (Positive Cases)", ()=> {
-  it( "should return an array with the modified object", ()=> {
+describe('When given toggleDone (Positive Cases)', ()=> {
+  it( 'should return an array with the modified object', ()=> {
     const index = 5;
     const chosenItem = ListItems[index];
     const previousState = chosenItem.Done;
@@ -23,37 +23,37 @@ describe("When given toggleDone (Positive Cases)", ()=> {
   });
 });
 
-describe("When given toggleDone (Negative Cases)", ()=> {
+describe('When given toggleDone (Negative Cases)', ()=> {
 
   afterEach(() => {
     vi.restoreAllMocks();
   });
 
-  it( "Should return a clone of the original array with no modifications if the items is not present", ()=> {
+  it( 'Should return a clone of the original array with no modifications if the items is not present', ()=> {
 
     const chosenItem = {
       Canceled    : false,
       Done        : false,
-      Description : "Test Item",
+      Description : 'Test Item',
       ID          : -1
     };
     expect(toggleDone(chosenItem,ListItems)).toStrictEqual(ListItems);
   });
 
-  it("Should return a clone of the list parameter when item parameter is undefined", ()=>{
-    const warningSpy = vi.spyOn(console,"warn");
+  it('Should return a clone of the list parameter when item parameter is undefined', ()=>{
+    const warningSpy = vi.spyOn(console,'warn');
 
     expect(toggleDone(undefined,ListItems)).toStrictEqual(ListItems);
     expect(warningSpy).toHaveBeenCalledOnce();
   });
 
-  it("Should return an empty array when List parameter is undefined", ()=>{
-    const warningSpy = vi.spyOn(console,"warn");
+  it('Should return an empty array when List parameter is undefined', ()=>{
+    const warningSpy = vi.spyOn(console,'warn');
 
     const chosenItem = {
       Canceled    : false,
       Done        : false,
-      Description : "Test Item",
+      Description : 'Test Item',
       ID          : -1
     };
 
