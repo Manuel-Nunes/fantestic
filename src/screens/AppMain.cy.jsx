@@ -8,7 +8,6 @@ describe('<AppMain />', () => {
 
   const guid = getGuid();
   const checkedClassName = 'jjQaGy';
-  const cancelledClassName = 'jjQaGy';
 
   beforeEach('renders', () => {
     cy.mount(<AppMain />)
@@ -27,7 +26,7 @@ describe('<AppMain />', () => {
 
   it('cancels a task', () => {
     cy.contains('div', `${guid}`).parent().children('#cancel-btn').click()
-    cy.contains('div', `${guid}`).parent().children('#cancel-btn').should('have.class', cancelledClassName);
+    cy.contains('div', `${guid}`).parent().children('#cancel-btn').should('have.class', checkedClassName);
   });
 
   it('removes a task', () => {
