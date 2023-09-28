@@ -60,4 +60,4 @@ export const ListItems = [
 
 export default {
   ListItems
-}
+};
