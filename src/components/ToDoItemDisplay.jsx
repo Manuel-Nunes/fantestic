@@ -2,6 +2,7 @@
 /** @typedef {import('../types/types')} */
 
 import styled from 'styled-components';
+import { createTestAttribute } from '../tests/createTestAtrr';
 
 
 const ToItemBody = styled.div`
@@ -92,15 +93,16 @@ const ToItemText = styled.div`
  */
 export function ToDoItemDisplay({
   Data,
-  CanceledItemClick,
-  DoneItemClick,
-  RemoveItemClick
+  CanceledItemClick = () => {},
+  DoneItemClick = () => {},
+  RemoveItemClick = () => {}
 }){
 
   return (
     <ToItemBody>
       <ToItemRemoveButton
-        onClick={()=>{ RemoveItemClick(Data);}}
+        id={"remove-btn"}
+        onClick={()=>{ RemoveItemClick(Data)}}
         />
 
       <ToItemText>
@@ -110,6 +112,7 @@ export function ToDoItemDisplay({
       </ToItemText>
 
       <ToItemDoneButton
+        id={"done-btn"}
         $isActive={Data.Done}
         onClick={()=>{
           DoneItemClick(Data);
@@ -117,6 +120,7 @@ export function ToDoItemDisplay({
       />
 
       <ToItemCanceledButton
+        id={"cancel-btn"}
         $isActive={Data.Canceled}
         onClick={()=>{
           CanceledItemClick(Data);
