@@ -1,0 +1,46 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  
+  workflow_dispatch:
+    inputs:
+      test:
+        description: 'Test Enabled'
+        default: true
+        type: boolean
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+     
+      - name: Install Dependencies
+        run: npm install & npm install -g lighthouse
+
+      - name: Build solution
+        run: npm run build --if-present
+
+      - name: Run Unit Tests
+        run: npm test
+    
+      - name: Start localhost
+        run: nohup npm run preview & sleep 5
+
+      - name: Run Preformance Test
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+            urls: |
+                http://localhost:4173/
+            uploadArtifacts: true
