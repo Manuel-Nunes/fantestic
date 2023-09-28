@@ -59,15 +59,19 @@ export function Header(
 
       <div>
         <InputLable>Task:</InputLable>
-        <ItemInput onChange={(e)=>{
+        <ItemInput
+          id={"task-text"}
+          onChange={(e)=>{
           setState(e.target.value)
         }} value={textState}></ItemInput>
       </div>
 
-      <AddButton onClick={()=>{
-        addToDoItem(textState);
-        setState("")
-      }}/>
+      <AddButton
+        id={'add-task-btn'}
+        onClick={()=>{
+          addToDoItem(textState);
+          setState("")
+        }}/>
 
     </HeaderHolder>
   );
