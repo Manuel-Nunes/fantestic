@@ -16,29 +16,18 @@ on:
         type: boolean
 jobs:
   build:
-
+  
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-        cache: 'npm'
-    - run: npm i
-    - run: npm run build --if-present
-
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-        cache: 'npm'
-    - run: npm test
-    - run: npm run preview
-    - run: lighthouse http://localhost:4173/
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+      - run: npm i
+      - run: npm run build --if-present
+      - run: npm test
+      - run: npm run preview
+      - run: lighthouse http://localhost:4173/
