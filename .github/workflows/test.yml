@@ -6,6 +6,7 @@ name: Node.js CI
 on:
   pull_request:
     branches: [ "main" ]
+  
   workflow_dispatch:
     inputs:
       test:
@@ -24,7 +25,9 @@ jobs:
         with:
           node-version: 18.x
           cache: 'npm'
-      - run: npm i
+     
+      - run: npm install
+      - run: npm install -g lighthouse
       - run: npm run build --if-present
       - run: npm test
       - run: npm run preview
