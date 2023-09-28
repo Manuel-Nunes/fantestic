@@ -1,6 +1,8 @@
 import React from 'react'
 import AppMain from './AppMain'
 
+
+
 describe('<AppMain />', () => {
 
   const guid = getGuid();
@@ -22,11 +24,11 @@ describe('<AppMain />', () => {
   });
 
   it('cancels a task', () => {
-    
+    cy.contains('div', `${guid}`).parent().children('#cancel-btn').click()
   });
 
   it('removes a task', () => {
-    
+    cy.contains('div', `${guid}`).parent().children('#remove-btn').click()
   });
 })
 

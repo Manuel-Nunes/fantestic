@@ -78,6 +78,7 @@ export function ToDoItemDisplay({
   return (
     <ToItemBody>
       <ToItemRemoveButton
+        id={"remove-btn"}
         onClick={()=>{ RemoveItemClick(Data)}}
         />
 
@@ -96,6 +97,7 @@ export function ToDoItemDisplay({
       />
 
       <ToItemCanceledButton
+        id={"cancel-btn"}
         $isActive={Data.Canceled}
         onClick={()=>{
           CanceledItemClick(Data)
