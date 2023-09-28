@@ -27,10 +27,12 @@ describe('<AppMain />', () => {
 
   it('cancels a task', () => {
     cy.contains('div', `${guid}`).parent().children('#cancel-btn').click()
+    cy.contains('div', `${guid}`).parent().children('#cancel-btn').should('have.class', cancelledClassName);
   });
 
   it('removes a task', () => {
     cy.contains('div', `${guid}`).parent().children('#remove-btn').click()
+    cy.contains(`${guid}`).should('not.exist');
   });
 })
 
