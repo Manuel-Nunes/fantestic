@@ -36,7 +36,7 @@ const itemButtons = styled.div`
   background-size: 60% 60%;
   cursor: pointer;
 
-  ${ ({ $isActive })=> { return ($isActive) ? "filter: brightness(1.5);" : "";}}
+  ${ ({ $isActive })=> { return ($isActive) ? 'filter: brightness(1.5);' : '';}}
 
   &:hover {
     filter: brightness(1.5);

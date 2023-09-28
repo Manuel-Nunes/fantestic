@@ -1,7 +1,7 @@
 /** @typedef {import('../types/types')} */
 
-import { useState } from "react";
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
 const HeaderHolder = styled.div`
   display: flex;
@@ -76,7 +76,7 @@ export function Header(
     addToDoItem
   }
 ){
-  const [textState, setState] = useState("");
+  const [textState, setState] = useState('');
   return (
     <HeaderHolder>
 
@@ -89,7 +89,7 @@ export function Header(
 
       <AddButton onClick={()=>{
         addToDoItem(textState);
-        setState("");
+        setState('');
       }}/>
 
     </HeaderHolder>

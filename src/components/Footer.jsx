@@ -1,6 +1,6 @@
 /** @typedef {import('../types/types')} */
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const FooterButton = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const FooterButton = styled.div`
   &:hover {
     filter: brightness(1.5);
   }
-`
+`;
 
 const FooterHolder = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ const FooterHolder = styled.div`
   gap: 1rem;
   padding: 1rem;
   box-sizing: border-box;
-`
+`;
 
 /**
  *
@@ -45,7 +45,7 @@ export function Footer(
       <FooterButton onClick={ saveList } >Save</FooterButton>
       <FooterButton onClick={ loadList } >Load</FooterButton>
     </FooterHolder>
-  )
+  );
 }
 
 export default Footer;

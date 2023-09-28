@@ -2,21 +2,21 @@
 
 import {
   useState
-} from "react";
+} from 'react';
 
 import {
   Header,
   ToDoDisplay,
   Footer
-} from "../components";
+} from '../components';
 
 import {
   ListItems
-} from "../mockData/ListItems";
+} from '../mockData/ListItems';
 
 import {
   appendToDo
-} from "../utils";
+} from '../utils';
 
 const itemKey = 'ToDoStorage';
 
