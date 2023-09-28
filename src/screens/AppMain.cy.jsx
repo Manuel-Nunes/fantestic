@@ -1,9 +1,8 @@
 import React from 'react'
 import AppMain from './AppMain'
-import { beforeEach } from 'mocha';
 
 describe('<AppMain />', () => {
-  before('renders', () => {
+  beforeEach('renders', () => {
     cy.mount(<AppMain />)
   });
 
